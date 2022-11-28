@@ -1,0 +1,13 @@
+#000000,rgb css
+#ffffff,rgb css
+TAB,text
+\n,text
+/[a-z]/,regex
+red,color generic
+purple,color generic
+invalid,generic
+Hello World!,generic
+<h1></h1>,html
+<div></div>,div
+lorem ipsum,generic
+dark,generic

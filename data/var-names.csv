@@ -1,0 +1,30 @@
+data,generic object
+text,string
+num,number
+res,generic
+info,generic
+element,generic
+a,generic
+b,generic
+c,generic
+h,generic
+x,generic
+y,generic
+z,generic
+template,generic string object
+str,string
+score,number
+time,time number
+id,number string
+completed,bool
+isValid,bool
+flag,bool
+form,object html
+arr,array
+list,array
+entries,array
+new_list,array
+obj,object
+config,object
+name,string
+color,string
