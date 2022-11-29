@@ -12,6 +12,13 @@ const Pool = {
         }
 
         return res[Math.floor(Math.random() * res.length)];
+    },
+    subjectList: function () {
+        const res: Set<string> = new Set();
+        for (const pair of Pool.default) {
+            pair[1].forEach(sub => res.add(sub))
+        }
+        return Array.from(res);
     }
 }
 

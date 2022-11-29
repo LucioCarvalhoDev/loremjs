@@ -1,5 +1,5 @@
-#000000,rgb css
-#ffffff,rgb css
+#000000,rgb css color
+#ffffff,rgb css color
 TAB,text
 \n,text
 /[a-z]/,regex
@@ -8,6 +8,12 @@ purple,color generic
 invalid,generic
 Hello World!,generic
 <h1></h1>,html
-<div></div>,div
+<div></div>,html
+<a></a>,html
 lorem ipsum,generic
 dark,generic
+on,generic
+off,generic
+f73-34,code
+b12-61,code
+a35-00,code
