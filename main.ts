@@ -1,6 +1,5 @@
 import createVariable from "./src/createVariable.ts"
 
-import Lexicon from "./src/repo/Lexicon.ts";
 
 // console.log(Lexicon.query("number"))
 

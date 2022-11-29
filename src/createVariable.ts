@@ -1,6 +1,5 @@
 import createString from "./createString.ts";
 import Lexicon from "./repo/Lexicon.ts";
-import Pool from "./repo/Pool.ts";
 import Register from "./repo/Register.ts";
 import Variable from "./Variable.ts";
 

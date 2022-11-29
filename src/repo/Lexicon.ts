@@ -1,7 +1,6 @@
 import {
 
-    parse,
-    parse as parseCsv
+    parse
 
 } from 'https://deno.land/std@0.82.0/encoding/csv.ts';
 
