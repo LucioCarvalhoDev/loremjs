@@ -17,3 +17,8 @@ off,generic
 f73-34,code
 b12-61,code
 a35-00,code
+black,color
+up,direction
+right,direction
+left,direction
+down,direction

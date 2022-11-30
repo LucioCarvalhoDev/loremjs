@@ -1,9 +1,9 @@
 identifier,types,subjects
 data,generic object,
-text,string,
+text,string,text
 num,number,
 res,generic,
-info,generic,
+info,generic,text
 element,string,html
 a,generic,
 i,generic,
@@ -29,3 +29,8 @@ name,string,
 color,string,color
 bgColor,string,color
 primaryColor,string,color
+title,string,
+msg,string,text
+direction,string,direction
+index,number,
+reg,string,regex

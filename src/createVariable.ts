@@ -6,6 +6,9 @@ import Variable from "./Variable.ts";
 type Type = "string" | "generic" | "number";
 
 export default function createVariable(type: Type, scope = "global") {
+    if (type == "generic") {
+        type = ["string", "number"][Math.floor(Math.random() * 2)] as Type
+    }
     const nameOptions = Lexicon.query(type, "any", scope).filter(
         val => !Register.global.has(val),
     );
@@ -17,17 +20,15 @@ export default function createVariable(type: Type, scope = "global") {
     const identifier = nameOptions[Math.floor(Math.random() * nameOptions.length)]
     Register.global.add(identifier);
 
-    if (type == "generic") {
-        type = ["string", "number"][Math.floor(Math.random() * 2)] as Type
-    }
+
     let content = '""';
+    let subject = "any";
     switch (type) {
         case "string": {
-            let sub = "any";
             if (Lexicon.getSubjects(identifier).length > 0) {
-                sub = Lexicon.getSubjects(identifier)[0]
+                subject = Lexicon.getSubjects(identifier)[0]
             }
-            content = `"${createString(sub)}"`;
+            content = `"${createString(subject)}"`;
             break;
         }
         case "number": {
@@ -35,5 +36,5 @@ export default function createVariable(type: Type, scope = "global") {
         }
     }
 
-    return new Variable({ mode: "let", identifier, content })
+    return new Variable({ mode: "let", identifier, content, subject })
 }
