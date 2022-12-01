@@ -34,3 +34,8 @@ msg,string,text
 direction,string,direction
 index,number,
 reg,string,regex
+location,string,path
+dir,string,path
+homeDir,string,path
+targetFolder,string,path
+fileLocation,string,path
