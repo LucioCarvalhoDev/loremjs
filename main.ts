@@ -1,4 +1,4 @@
-import { parse as cli } from "https://deno.land/std/flags/mod.ts"
+import { parse as cli } from "https://deno.land/std@0.167.0/flags/mod.ts"
 import createAssignment from "./src/createAssignment.ts"
 import createVariable from "./src/createVariable.ts"
 
