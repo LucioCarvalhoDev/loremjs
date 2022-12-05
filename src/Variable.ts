@@ -1,3 +1,5 @@
+import { args } from "../main.ts"
+
 interface VariableTemplate<t> {
     mode: "let" | "const",
     identifier: string,
@@ -18,11 +20,19 @@ export default class Variable<t> {
             this.subject = obj.subject
     }
 
-    display() {
+    print() {
+        if (args["d"] || args["debug"]) {
+            return this._debug();
+        } else {
+            return this._display();
+        }
+    }
+
+    private _display() {
         return (`${this.mode} ${this.identifier} = ${this.content};`)
     }
 
-    debug() {
+    private _debug() {
         return (`${this.mode} ${this.identifier} = ${this.content}; // ${this.subject}`)
     }
 }

@@ -1,8 +1,8 @@
+import { parse as cli } from "https://deno.land/std/flags/mod.ts"
 import createAssignment from "./src/createAssignment.ts"
-import createOperation from "./src/createOperation.ts"
 import createVariable from "./src/createVariable.ts"
-import generatePath from "./src/data/string/path.ts"
 
+export const args = cli(Deno.args);
 
 export default function main() {
     const numSteps = Math.floor(Math.random() * 6) + 3;
@@ -11,9 +11,9 @@ export default function main() {
     for (let i = 0; i < numSteps; i++) {
         fakeCode += (function () {
             if (i == 0) {
-                return createVariable("generic").debug()
+                return createVariable("generic").print()
             } else if (Math.random() > (Math.min(i, 4) / 5)) {
-                return createVariable("generic").debug()
+                return createVariable("generic").print()
             } else { // do complex things
                 return createAssignment()
             }
@@ -22,4 +22,15 @@ export default function main() {
     return fakeCode
 }
 
-Deno.writeTextFile("output.js", main());
+if (args["o"] != undefined || args["output"] != undefined) {
+    let outFile = "output.js";
+    if (args["o"] === 0)
+        outFile = args["o"] || args["output"];
+    const res = main();
+    Deno.writeTextFile(outFile, res);
+    if (args["p"])
+        Deno.stdout.writeSync(Uint8Array.from(res.split("").map(x => x.charCodeAt(0))));
+} else {
+    const res = main();
+    Deno.stdout.writeSync(Uint8Array.from(res.split("").map(x => x.charCodeAt(0))));
+}
