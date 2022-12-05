@@ -1,5 +1,8 @@
+import Variable from "../Variable.ts";
+
+
 const Register = {
-    global: new Set<string>()
+    global: new Map<string, Variable<any>>()
 }
 
 export default Register;

@@ -52,6 +52,12 @@ const Lexicon = {
         }
         throw `Identifier ${identifier} not found`
     },
+    getScope: function (scope = "global") {
+        const res = Lexicon.scopes.get(scope);
+        if (res == undefined)
+            throw `Scope "${scope}" not found`
+        return Array.from(res);
+    }
 };
 const init = new Map<string, [string[], string[]]>();
 

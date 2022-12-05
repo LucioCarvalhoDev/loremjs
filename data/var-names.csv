@@ -39,3 +39,4 @@ dir,string,path
 homeDir,string,path
 targetFolder,string,path
 fileLocation,string,path
+parsedData,generic,

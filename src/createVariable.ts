@@ -1,4 +1,4 @@
-import createString from "./createString.ts";
+import createString from "./data/string/createString.ts";
 import Lexicon from "./repo/Lexicon.ts";
 import Register from "./repo/Register.ts";
 import Variable from "./Variable.ts";
@@ -9,16 +9,16 @@ export default function createVariable(type: Type, scope = "global") {
     if (type == "generic") {
         type = ["string", "number"][Math.floor(Math.random() * 2)] as Type
     }
-    const nameOptions = Lexicon.query(type, "any", scope).filter(
+    const possibleIdentifiers = Lexicon.query(type, "any", scope).filter(
         val => !Register.global.has(val),
     );
 
-    if (nameOptions.length == 0) {
+    if (possibleIdentifiers.length == 0) {
         throw `Lexicon.scopes.${scope} overflow of tokens with type "${type}"`
     }
 
-    const identifier = nameOptions[Math.floor(Math.random() * nameOptions.length)]
-    Register.global.add(identifier);
+    const identifier = possibleIdentifiers[Math.floor(Math.random() * possibleIdentifiers.length)]
+    //Register.global.add(identifier);
 
 
     let content = '""';
@@ -36,5 +36,7 @@ export default function createVariable(type: Type, scope = "global") {
         }
     }
 
-    return new Variable({ mode: "let", identifier, content, subject })
+    const res = new Variable({ mode: "let", identifier, content, subject });
+    Register.global.set(identifier, res);
+    return res;
 }

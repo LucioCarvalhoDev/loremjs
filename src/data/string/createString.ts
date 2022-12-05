@@ -1,5 +1,5 @@
-import generatePath from "./data/string/path.ts";
-import Pool from "./repo/Pool.ts";
+import generatePath from "../../data/string/path.ts";
+import Pool from "../../repo/Pool.ts";
 
 export default function createString(sub: string) {
     if (sub == "path") {
