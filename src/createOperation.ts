@@ -13,7 +13,7 @@ const op = {
 
 export default function createOperation(type: "string" | "number") {
     let res = "";
-    let possibleVars = Array.from(Register.global);
+    let possibleVars = Register.getScope();
 
     switch (type) {
         case "string": {

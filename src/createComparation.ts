@@ -2,16 +2,16 @@ import createOperation from "./createOperation.ts";
 import { chance, pick } from "./lib/random.ts";
 import Register from "./repo/Register.ts";
 
-export default function createComparation() {
-    let operators = "==,!=,>,<".split(",");
-    let res = "#1 #2 #3";
+export default function createComparation(scope = "global") {
+    const operators = "==,!=,>,<".split(",");
+    const res = "#1 #2 #3";
 
     let firstTerm = "";
-    let secondTerm = pick(operators);
+    const secondTerm = pick(operators);
     let thirdTerm = "";
 
-    //return Array.from(Register.global)
-    let possibleVars = Array.from(Register.global);
+    //return Register.getScope()
+    let possibleVars = Register.getScope(scope);
     if ([">", "<"].includes(secondTerm)) { //must be a number
         possibleVars = possibleVars.filter(val => val[1].dataType == "number");
 

@@ -9,8 +9,8 @@ export default function createVariable(type: Type | "generic", scope = "global")
     if (type == "generic") {
         type = ["string", "number"][Math.floor(Math.random() * 2)] as Type
     }
-    const possibleIdentifiers = Lexicon.query(type, "any", scope).filter(
-        val => !Register.global.has(val),
+    const possibleIdentifiers = Lexicon.query(type, "any").filter(
+        val => !Register.exists(val, scope),
     );
 
     if (possibleIdentifiers.length == 0) {
@@ -37,6 +37,6 @@ export default function createVariable(type: Type | "generic", scope = "global")
     }
 
     const res = new Variable({ mode: "let", identifier, content, subject, dataType: type });
-    Register.global.set(identifier, res);
+    Register.setOn(res, scope)
     return res;
 }

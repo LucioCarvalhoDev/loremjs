@@ -40,3 +40,6 @@ homeDir,string,path
 targetFolder,string,path
 fileLocation,string,path
 parsedData,generic,
+num,number,
+maxValue,number,
+minValue,number,
