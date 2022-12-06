@@ -27,7 +27,7 @@ export default function createOperation(type: "string" | "number") {
                     res += " + ";
 
                 if (possibleVars.length == 0) {
-                    res += '"placeholder"'; // substituir por gerador de palavras
+                    res += '"___"'; // substituir por gerador de palavras
                 } else {
                     const var1 = possibleVars[Math.floor(Math.random() * possibleVars.length)][1];
                     res += var1.identifier;

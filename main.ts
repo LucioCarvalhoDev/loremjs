@@ -1,7 +1,5 @@
 import { parse as cli } from "https://deno.land/std@0.167.0/flags/mod.ts"
 import createAssignment from "./src/createAssignment.ts"
-import createComparation from "./src/createComparation.ts";
-import createOperation from "./src/createOperation.ts";
 import createVariable from "./src/createVariable.ts"
 
 export const args = cli(Deno.args);
@@ -36,7 +34,3 @@ if (args["o"] != undefined || args["output"] != undefined) {
     const res = main();
     Deno.stdout.writeSync(Uint8Array.from(res.split("").map(x => x.charCodeAt(0))));
 }
-
-createVariable("number");
-console.log(createComparation())
-//console.log(createComparation())
