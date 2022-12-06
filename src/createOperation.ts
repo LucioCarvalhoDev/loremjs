@@ -1,4 +1,4 @@
-import { chance } from "./lib/random.ts";
+import { chance, pick } from "./lib/random.ts";
 import Register from "./repo/Register.ts";
 
 const op = {
@@ -21,7 +21,7 @@ export default function createOperation(type: "string" | "number") {
                 return isNaN(+el[1].content)
             });
 
-            let q = Math.floor(Math.random() * 3) + 1;
+            const q = Math.floor(Math.random() * 3) + 1;
             for (let i = 0; i < q; i++) {
                 if (i > 0)
                     res += " + ";
@@ -36,6 +36,25 @@ export default function createOperation(type: "string" | "number") {
                     }
 
                 }
+            }
+            break;
+        }
+        case "number": {
+            possibleVars = possibleVars.filter(val => val[1].dataType == "number");
+
+
+            const q = Math.floor(Math.random() * 3) + 1;
+            for (let i = 0; i < q; i++) {
+                if (i > 0) {
+                    res += " " + pick("+*-/".split("")) + " ";
+                }
+                if (possibleVars.length > 0 && chance(0.5)) {
+                    res += possibleVars.splice(Math.floor(Math.random() * possibleVars.length), 1)[0][0]
+
+                } else {
+                    res += Math.floor(Math.random() * 128)
+                }
+
             }
         }
     }

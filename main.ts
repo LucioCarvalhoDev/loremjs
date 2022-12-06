@@ -38,5 +38,5 @@ if (args["o"] != undefined || args["output"] != undefined) {
 }
 
 createVariable("number");
-console.log(createOperation("number"))
+console.log(createComparation())
 //console.log(createComparation())
