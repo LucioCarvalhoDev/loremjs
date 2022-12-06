@@ -1,10 +1,12 @@
 import { args } from "../main.ts"
+import { Type } from "./createVariable.ts"
 
 interface VariableTemplate<t> {
     mode: "let" | "const",
     identifier: string,
     content: t | undefined,
-    subject: string
+    subject: string,
+    dataType: Type,
 }
 
 export default class Variable<t> {
@@ -12,12 +14,14 @@ export default class Variable<t> {
     readonly identifier: string
     public content: t | undefined
     public subject: string
+    public dataType: Type
 
     constructor(obj: VariableTemplate<t>) {
         this.mode = obj.mode,
             this.identifier = obj.identifier,
             this.content = obj.content,
-            this.subject = obj.subject
+            this.subject = obj.subject,
+            this.dataType = obj.dataType
     }
 
     print() {
@@ -33,6 +37,6 @@ export default class Variable<t> {
     }
 
     private _debug() {
-        return (`${this.mode} ${this.identifier} = ${this.content}; // ${this.subject}`)
+        return (`${this.mode} ${this.identifier} = ${this.content}; // ${this.dataType}::${this.subject}`)
     }
 }

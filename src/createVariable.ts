@@ -3,9 +3,9 @@ import Lexicon from "./repo/Lexicon.ts";
 import Register from "./repo/Register.ts";
 import Variable from "./Variable.ts";
 
-type Type = "string" | "generic" | "number";
+export type Type = "string" | "number";
 
-export default function createVariable(type: Type, scope = "global") {
+export default function createVariable(type: Type | "generic", scope = "global") {
     if (type == "generic") {
         type = ["string", "number"][Math.floor(Math.random() * 2)] as Type
     }
@@ -36,7 +36,7 @@ export default function createVariable(type: Type, scope = "global") {
         }
     }
 
-    const res = new Variable({ mode: "let", identifier, content, subject });
+    const res = new Variable({ mode: "let", identifier, content, subject, dataType: type });
     Register.global.set(identifier, res);
     return res;
 }
