@@ -4,8 +4,9 @@
 
 ## Usage
 
+Run scripts from web on command line:
 ```
-$ deno run --allow-read=./data --allow-write main.ts
+$ deno run --allow-read=./data --allow-write "https://raw.githubusercontent.com/LucioCarvalhoDev/loremjs/main/main.ts"
 let minValue = 95;
 let text = "\n";
 if (text != text.toUpperCase()) {
