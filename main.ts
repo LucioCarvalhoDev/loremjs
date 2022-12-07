@@ -32,16 +32,17 @@ export default function main(size = 5, settings: MainConfig = { scope: "global",
     return fakeCode
 }
 
+const cliSize = args["s"] || args["size"] || 5;
 if (args["o"] != undefined || args["output"] != undefined) {
     let outFile = "output.js";
     if (args["o"] === 0)
         outFile = args["o"] || args["output"];
-    const res = main();
+    const res = main(cliSize);
     Deno.writeTextFile(outFile, res);
-    if (args["p"])
+    if (args["p"] || args["print"])
         Deno.stdout.writeSync(Uint8Array.from(res.split("").map(x => x.charCodeAt(0))));
 } else {
-    const res = main();
+    const res = main(cliSize);
     Deno.stdout.writeSync(Uint8Array.from(res.split("").map(x => x.charCodeAt(0))));
 }
 
