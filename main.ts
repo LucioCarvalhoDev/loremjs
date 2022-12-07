@@ -6,10 +6,13 @@ import { chance } from "./src/lib/random.ts";
 
 export const args = cli(Deno.args);
 
+export const TAB = (args["tab"] || args["t"]) ? " ".repeat(args["tab"] || args["t"]) : "\t";
+
 interface MainConfig {
     scope: string,
     varCreationChanceCap: number
 }
+
 export default function main(size = 5, settings: MainConfig = { scope: "global", varCreationChanceCap: 0.4 }) {
     const numSteps = size;
     let fakeCode = "";
