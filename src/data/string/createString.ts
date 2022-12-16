@@ -1,10 +1,13 @@
 import generatePath from "../../data/string/path.ts";
 import Pool from "../../repo/Pool.ts";
+import createWord from "./createWord.ts";
 
-export default function createString(sub: string) {
+export default function createString(sub?: string) {
     if (sub == "path") {
         return generatePath();
+    } else if (sub) {
+        return Pool.getFromSubject(sub)
     } else {
-        return Pool.getFromSubject(sub);
+        return createWord();
     }
 }

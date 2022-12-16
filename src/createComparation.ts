@@ -1,5 +1,5 @@
 import createOperation from "./createOperation.ts";
-import { chance, pick } from "./lib/random.ts";
+import { pick } from "./lib/random.ts";
 import Register from "./repo/Register.ts";
 
 export default function createComparation(scope = "global") {
@@ -10,14 +10,13 @@ export default function createComparation(scope = "global") {
     const secondTerm = pick(operators);
     let thirdTerm = "";
 
-    //return Register.getScope()
     let possibleVars = Register.getScope(scope);
     if ([">", "<"].includes(secondTerm)) { //must be a number
         possibleVars = possibleVars.filter(val => val[1].dataType == "number");
 
         if (possibleVars.length == 0) {
-            firstTerm = "_";
-            thirdTerm = Math.floor(Math.random() * 256) + "";
+            firstTerm = "Math.random()";
+            thirdTerm = Math.random().toFixed(2) + "";
         } else {
             firstTerm = pick(possibleVars)[0];
             thirdTerm = createOperation("number");

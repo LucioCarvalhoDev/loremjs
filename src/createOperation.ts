@@ -1,3 +1,4 @@
+import createString from "./data/string/createString.ts";
 import { chance, pick } from "./lib/random.ts";
 import Register from "./repo/Register.ts";
 
@@ -27,7 +28,7 @@ export default function createOperation(type: "string" | "number") {
                     res += " + ";
 
                 if (possibleVars.length == 0) {
-                    res += '"___"'; // substituir por gerador de palavras
+                    res += `"${createString()}"`;
                 } else {
                     const var1 = possibleVars[Math.floor(Math.random() * possibleVars.length)][1];
                     res += var1.identifier;
