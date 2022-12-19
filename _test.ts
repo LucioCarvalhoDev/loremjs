@@ -1,12 +1,12 @@
 import { assertEquals } from "https://deno.land/std@0.168.0/testing/asserts.ts";
 
-Deno.test("output", async () => {
-    const cmd = "deno run --allow-read --allow-write main.ts -op".split(" ");
+Deno.test("Validade do Output", async () => {
+    const cmd = "deno run --allow-read --allow-write main.ts".split(" ");
 
 
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 100; i++) {
         const p = Deno.run({ cmd, stdout: "piped" });
-        const p_status = await p.status();
+        await p.status();
         const fakeCode = new TextDecoder().decode(await p.output());
         p.close();
 

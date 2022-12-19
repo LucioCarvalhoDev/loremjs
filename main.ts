@@ -6,8 +6,8 @@ import { chance } from "./src/lib/random.ts";
 
 export const args = cli(Deno.args);
 
-export const TAB = (args["tab"] || args["t"]) ? " ".repeat(args["tab"] || args["t"]) : "\t";
-
+export const TAB = (args["tab"] != undefined || args["t"] != undefined) ? " ".repeat(args["tab"] || args["t"]) : "\t";
+console.log(args)
 interface MainConfig {
     scope: string,
     varCreationChanceCap: number
@@ -48,5 +48,3 @@ if (args["o"] != undefined || args["output"] != undefined) {
     const res = main(cliSize);
     Deno.stdout.writeSync(Uint8Array.from(res.split("").map(x => x.charCodeAt(0))));
 }
-
-// console.log(createConditional())

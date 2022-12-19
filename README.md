@@ -38,3 +38,4 @@ if (minValue != minValue) {
 | `-o <file>` or `--output <file>` | saves output on `<file>` | `-o ./output.js`|
 | `-p` or `--print` | in union with `-o`, forces print of output | `-p -o ./output.js` |
 | `-s <number>` or `--size <number>` | define the `<number>` of elements generated | `-s 10`
+| `-t <number>` or `--tab <number` | set the `<number>` of spaces used on indentation | `-t 2`

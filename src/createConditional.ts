@@ -5,7 +5,7 @@ import Register from "./repo/Register.ts";
 export default function createConditional(size: number) {
     const localScope = Register.newScope();
 
-    let res = (
+    const res = (
         `if (#1) {
 #2}`)
 
