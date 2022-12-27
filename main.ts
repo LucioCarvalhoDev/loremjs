@@ -7,7 +7,7 @@ import { chance } from "./src/lib/random.ts";
 export const args = cli(Deno.args);
 
 export const TAB = (args["tab"] != undefined || args["t"] != undefined) ? " ".repeat(args["tab"] || args["t"]) : "\t";
-console.log(args)
+
 interface MainConfig {
     scope: string,
     varCreationChanceCap: number
