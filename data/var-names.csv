@@ -1,7 +1,7 @@
 identifier,types,subjects
 data,generic object,
 text,string,text
-num,number,
+num,number,small
 res,generic,
 info,generic,text
 element,string,html
@@ -12,9 +12,9 @@ z,generic,
 template,string,html
 target,string,html
 str,string,
-score,number,
-time,time number,date
-id,number string,code
+score,number,small
+time,time,date
+id,string,code
 completed,bool,
 isValid,bool,
 flag,bool,
@@ -32,7 +32,7 @@ primaryColor,string,color
 title,string,
 msg,string,text
 direction,string,direction
-index,number,
+index,number,small
 reg,string,regex
 location,string,path
 dir,string,path
@@ -40,6 +40,10 @@ homeDir,string,path
 targetFolder,string,path
 fileLocation,string,path
 parsedData,generic,
-num,number,
-maxValue,number,
-minValue,number,
+maxValue,number,small
+minValue,number,small
+chance,number,decimal
+rate,number,decimal
+porcentage,number,decimal
+seconds,number,large
+income,number,money

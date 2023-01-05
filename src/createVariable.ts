@@ -1,4 +1,5 @@
 import createString from "./data/string/createString.ts";
+import createNumber from "./data/number/createNumber.ts";
 import Lexicon from "./repo/Lexicon.ts";
 import Register from "./repo/Register.ts";
 import Variable from "./Variable.ts";
@@ -18,8 +19,6 @@ export default function createVariable(type: Type | "generic", scope = "global")
     }
 
     const identifier = possibleIdentifiers[Math.floor(Math.random() * possibleIdentifiers.length)]
-    //Register.global.add(identifier);
-
 
     let content = '""';
     let subject = "any";
@@ -32,7 +31,11 @@ export default function createVariable(type: Type | "generic", scope = "global")
             break;
         }
         case "number": {
-            content = Math.floor(Math.random() * 128) + ""
+            if (Lexicon.getSubjects(identifier).length > 0) {
+                subject = Lexicon.getSubjects(identifier)[0]
+            }
+            content = `${createNumber(subject)}`;
+            break;
         }
     }
 

@@ -1,4 +1,4 @@
-import createWord from "./createWord.ts";
+import createWord from "./word.ts";
 
 export default function generatePath() {
     const templates = [
