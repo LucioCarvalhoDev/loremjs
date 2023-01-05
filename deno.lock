@@ -14,6 +14,18 @@
     "https://deno.land/std@0.82.0/encoding/utf8.ts": "1b7e77db9a12363c67872f8a208886ca1329f160c1ca9133b13d2ed399688b99",
     "https://deno.land/std@0.82.0/io/bufio.ts": "3cbbe1f761c1c636d1e7128ed4e7fdca6bf21d9199aa3cae71e69972a6ae8f93",
     "https://deno.land/std@0.82.0/io/readers.ts": "4c2e98abf2a2a1d5e2adaf460479a1c69f742951c1bc141b26654d2f5248b663",
-    "https://deno.land/std@0.82.0/textproto/mod.ts": "4c378eda3cb6216608bb4c3a34201761c65f6980c4669455ca224c330cd5b790"
+    "https://deno.land/std@0.82.0/textproto/mod.ts": "4c378eda3cb6216608bb4c3a34201761c65f6980c4669455ca224c330cd5b790",
+    "https://deno.land/std@0.87.0/_util/assert.ts": "2f868145a042a11d5ad0a3c748dcf580add8a0dbc0e876eaa0026303a5488f58",
+    "https://deno.land/std@0.87.0/bytes/mod.ts": "1ae1ccfe98c4b979f12b015982c7444f81fcb921bea7aa215bf37d84f46e1e13",
+    "https://deno.land/std@0.87.0/io/bufio.ts": "60d292248c8b32b3d8d13a4336b0c381b2dce5b9c9b50a4930205dea87eaf456",
+    "https://deno.land/x/ask@1.0.6/mod.ts": "96539a1177ec2dd009920d9d91078950645e65e06619055925e08c96915d7e9a",
+    "https://deno.land/x/ask@1.0.6/src/core/prompt.ts": "909276150e08013b61b6f5625cdb9918bc93e91b2f06a3ecf02e754745104d45",
+    "https://deno.land/x/ask@1.0.6/src/core/result.ts": "d3f1ed5f670a76349b07453d34de2ebdd6940487a796ae00dbdde7f3a6ac9989",
+    "https://deno.land/x/ask@1.0.6/src/core/text.ts": "3978b9f2b9b7c824582ee760138e1de4cd9c7cfc91aec75cebabf05cf27c29b9",
+    "https://deno.land/x/ask@1.0.6/src/types/confirm.ts": "5e2ab79809a070e715a02da7f4a403209b07ff4a799befde5f3e258172c990ef",
+    "https://deno.land/x/ask@1.0.6/src/types/input.ts": "3ebbdfdcffa6e5bfc88e47bb7bf4c8e3454c566534e2dbe7f75aefa89029c5bb",
+    "https://deno.land/x/ask@1.0.6/src/types/number.ts": "5356ce3a7f357aec2775a6c939b73ccae2437757fd6acdb6c30eeabb190aefca",
+    "https://deno.land/x/iro@1.0.3/mod.ts": "ac3bdb5d5373a0b623652bd79ab552c1305e5eabb2872438dfef9c1499611676",
+    "https://deno.land/x/iro@1.0.3/src/iro.ts": "b1791e78b57defbd22263a5976da1865873501a6033d2e51070919ad97646995"
   }
 }

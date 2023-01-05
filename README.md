@@ -4,30 +4,28 @@
 
 ## Usage
 
-Run scripts from web on command line:
+For a fast look run with a `-p` flag and the output will be print on terminal
+```
+$ deno run --allow-read=./data --allow-write "https://raw.githubusercontent.com/LucioCarvalhoDev/loremjs/main/main.ts" -p
+```
+
+Run the script without any argument to be promted about settings
+
 ```
 $ deno run --allow-read=./data --allow-write "https://raw.githubusercontent.com/LucioCarvalhoDev/loremjs/main/main.ts"
-```
-```
-let minValue = 95;
-let text = "\n";
-if (text != text.toUpperCase()) {
-	let text = "\n";
-	let homeDir = "../quae/possit/eodem/optatius/eges:/facilis";
-	text = text.trim() + text.trim()
-}
-if (minValue != minValue) {
-	let name = "\n";
-	text = text.toLowerCase() + text.toLowerCase() + text.toLowerCase()
-	if (minValue < minValue + 19 / 10) {
-		let text = "\n";
-		text = text + text.toLowerCase()
-		if (text != text.toUpperCase() + text + text) {
-			let id = "b12-61";
-			text = text
-			text = text + text + text.toUpperCase()
-		}
-	}
+? Size of output (5) 
+? Save output in a file? 
+? print [Y/n] (y) 
+? Number of tab spaces (4)
+
+let chance = 0.426;
+chance = "et" + "et" + "postmeridianam"
+let rate = 0.392;
+chance = "tuis"
+if (chance > rate) {
+    let title = "/[a-z]/";
+    chance = "ad"
+    let msg = "TAB";
 }
 ```
 
@@ -35,7 +33,7 @@ if (minValue != minValue) {
 
 | Flag | Effect | Exemple
 |----|---|----|
-| `-o <file>` or `--output <file>` | saves output on `<file>` | `-o ./output.js`|
-| `-p` or `--print` | in union with `-o`, forces print of output | `-p -o ./output.js` |
+| `-S <file>` or `--save <file>` | saves output on `<file>` | `-S ./output.js`|
+| `-p` or `--print` | in union with `-o`, forces print of output | `-p -S ./output.js` |
 | `-s <number>` or `--size <number>` | define the `<number>` of elements generated | `-s 10`
 | `-t <number>` or `--tab <number` | set the `<number>` of spaces used on indentation | `-t 2`
